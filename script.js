@@ -4,7 +4,7 @@ const flame = document.querySelector(".flame");
 const message = document.getElementById("message");
 
 let isBlown = false;
-
+// 吹灭蜡烛触发
 function extinguishCandle() {
   if (!isBlown) {
     isBlown = true;
@@ -44,12 +44,12 @@ startButton.addEventListener("click", function () {
       const dataArray = new Uint8Array(analyser.frequencyBinCount);
 
       microphone.connect(analyser);
-
+      // 更新麦克风获取到的内容
       function update() {
         analyser.getByteFrequencyData(dataArray);
         const average =
           dataArray.reduce((acc, val) => acc + val, 0) / dataArray.length;
-
+        // 声音起始值
         const threshold = 16;
 
         // if (average > threshold) {
@@ -57,12 +57,12 @@ startButton.addEventListener("click", function () {
         // } else {
         // //   flame.style.display = "none";
         // }
-
+        // 当所获取的分贝平均值大于了阈值,触发吹灭蜡烛
         if (average > threshold) {
           extinguishCandle();
           //   flame.style.display = "none";
         }
-
+        // 定期执行更新操作
         requestAnimationFrame(update);
       }
 
