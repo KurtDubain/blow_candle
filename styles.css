@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ffe;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+  /* .candles {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 75%; /* 设置蜡烛容器宽度 */
+  /* }  */
+  
+  .candle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 45px;
+    height: 300px;
+    background-color: #c96;
+    border-radius: 20px;
+    
+  }
+  
+  .wick {
+    background-color: #565656;
+    position: absolute;
+    top: 10px;
+    /* left: 50%; */
+    width: 5px;
+    height: 40px;
+    border-radius: 50%;
+    /* transform: translateX(-50%); */
+  }
+  
+  .flame {
+    width: 80px;
+    height: 100px;
+    background: radial-gradient(circle, #ff6c00 20%, rgba(255, 255, 255, 0) 60%);
+    position: absolute;
+    top: -100px; /* 调整火焰位置到蜡烛芯的位置 */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    animation: flame 1s infinite alternate;
+    border-radius: 50% 20% 50% 20%;
+    transition: transform 0.5s ease-in-out; /* 添加火焰的过渡效果 */
+  }
+  
+  @keyframes flame {
+    from {transform: scaleY(1);}
+    to {transform: scaleY(1.1);}
+  }
+  
+  .message {
+    font-size: 48px; /* 调整生日快乐文字的字体大小 */
+    font-weight: bold;
+    color: #f00;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out; /* 添加生日快乐文字的过渡效果 */
+  }
+  
+  button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    background-color: #ff6c00;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
